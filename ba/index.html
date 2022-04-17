@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="manifest" href="./pwa/manifest.webmanifest">
+        <link rel="apple-touch-icon" sizes="180x180" href="icon-192x192.png">
+        <link rel="icon" href="./icon/favicon.ico">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta charset="utf-8">
+        <script>
+            window.addEventListener('load', function () {
+                if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.register("./pwa/sw.js")
+                        .then(function (registration) {
+                            console.log("serviceWorker registed.");
+                        }).catch(function (error) {
+                            console.warn("serviceWorker error.", error);
+                        });
+                }
+            });
+        </script>
+        <title></title>
+    </head>
+    <body>
+    <header>
+        <img src="./icon/icon-192x192.png" height="40px">
+        <p>
+            テスト
+        </p>
+    </header>
+    <div id="how_to_install">
+        もしこのアプリを気に入ったら、ぜひインストールをお願いします。
+        <div style="
+            border: green solid 1px;
+            background-color: greenyellow;
+            color: green;
+            border-radius: 5px;
+            margin: 1px 5px;
+        ">
+            ・インストールすると、ホーム画面からワンタッチで起動できます。<br>
+            ・インストールすると、オフラインでも使えます。
+        </div>
+        <div style="
+            width: 100%;
+            background-color: lightblue;
+            color: blue;
+            border-radius: 0px 0px 5px 5px;
+            padding: 5px 0px;
+        " onclick="howToInstall()">
+            インストール方法を見る
+        </div>
+    </div>
+    <div id="menu_outside"></div>
+    <img id="menu_open" src="./icon/menu.svg">
+    <div id="menu">
+        <div id="menu_button">
+            メニューボタン
+        </div>
+        <div id="menu_button">
+            メニューボタン
+        </div>
+    </div>
+    <div id="menu_side"></div>
+    </body>
+    <script src="./functions.js"></script>
+    <script src="./script.js"></script>
+</html>
