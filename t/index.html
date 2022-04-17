@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" type="image/png"  sizes="512x512" href="./icon/icon-512x512.png">
+        <link rel="apple-touch-icon" sizes="512x512" href="./icon/icon-512x512.png">
+        <link rel="icon" href="./icon/favicon.ico">
+        
+        <link rel="stylesheet" href="style.css">
+        <link rel="manifest" href="manifest.webmanifest" />
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta charset="utf-8">
+        <script>
+            window.addEventListener('load', function () {
+                if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.register("./sw.js")
+                        .then(function (registration) {
+                            console.log("serviceWorker registed.");
+                        }).catch(function (error) {
+                            console.warn("serviceWorker error.", error);
+                        });
+                }
+            });
+        </script>
+        <title>写真転載防止透かし</title>
+    </head>
+    <body>        
+        <section>
+            <header style="background-color: mediumblue;display: inline-block;width: 100%;">
+                <span style="float: left;background-color: midnightblue;color:white;padding: 5px;">1</span>
+                <span style="float: left;background-color: mediumblue;color:white;padding: 5px;">画像を選択</span>
+            </header>
+            <div style="background-color: silver;">
+                <img src="./icon/icon-512x512.png" width="100px"><span style="font-size: 20px;">写真転載防止透かし</span>
+                <hr>
+                <span style="font-size: 15px;">
+                よく他人の写真をあたかも自分で撮った写真かのように使う人、いるよね。<br>
+                その対策としてこのソフトを作りました。<br>
+                ちなみにこのアプリのアイコンに意味は特にないです<br><br>
+                気に入ったらインストールお願いします!<br>
+                やり方(android)→1:Lineブラウザで開いている場合、右下の「︙」を押し、「デフォルトのブラウザで開く」を押す<br>
+                2:右上の「︙」を押し、「アプリをインストール」を押す<br>
+                3:「インストール」を押す<br>
+                4:インストール完了!<br>
+                ※インストールすると、オフラインでも使えるようになります。
+            </span>
+            </div>
+            透かしを入れる写真を選び、右下のアイコンを押してください<br>
+            <input type="file" id="input_file" accept="image/*">
+            <div>
+                <br>
+                手軽・簡単に使える
+                <a href="https://line.me/R/ti/p/%40413gcmgs">lineBot版はこちら</a>
+            </div>
+        </section>
+        <section style="display: none;">
+            <header style="background-color: mediumblue;display: inline-block;width: 100%;">
+                <span style="float: left;background-color: midnightblue;color:white;padding: 5px;">2</span>
+                <span style="float: left;background-color: mediumblue;color:white;padding: 5px;">透かしの内容を決定</span>
+            </header>
+            <svg id="svg" xmlns="http://www.w3.org/2000/svg">
+            </svg>
+            <table>
+                <tr>
+                    <th>メインテキスト</th>
+                    <td>
+                        <input type="text" placeholder="e331#4378" id="maintextinput">
+                    </td>
+                </tr>
+                <tr>
+                    <th>サブテキスト</th>
+                    <td>
+                        <textarea placeholder="この画像の無断転載を禁じる" id="subtextinput"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th>不透明度</th>
+                    <td>
+                        <input type="range" value="0.6" min="0" max="1" step="0.1" id="textopacityinput">
+                    </td>
+                </tr>
+                <tr>
+                    <th>色</th>
+                    <td>
+                        <input type="color" value="#ffffff" id="textcolorinput">
+                    </td>
+                </tr>
+                <tr>
+                    <th>文字のふち</th>
+                    <td>
+                        <input type="color" value="#000000" id="edgecolorinput">
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <section style="display: none;">
+            <header style="background-color: mediumblue;display: inline-block;width: 100%;">
+                <span style="float: left;background-color: midnightblue;color:white;padding: 5px;">3</span>
+                <span style="float: left;background-color: mediumblue;color:white;padding: 5px;">できた画像を保存</span>
+            </header>
+            <img id="tobase64" style="display: none;">
+            <svg id="svg_download" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            </svg>
+            「保存」ボタンを押して、できた写真のダウンロードが終わるまでお待ちください
+            <br>
+            <input type="button" value="保存" onclick="download()">
+            <p id="download_status"></p>
+
+        </section>
+        <footer>
+            <div id="back" style="display: none;" onclick="backstep()">戻る</div>
+            <img id="next" style="display: none;" src="./icon/next.svg" onclick="nextstep()">
+        </footer>
+    </body>
+    <script src="./script.js"></script>
+</html>

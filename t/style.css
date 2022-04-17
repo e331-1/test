@@ -1,0 +1,36 @@
+@font-face {
+    font-family: minmoji;
+    src: url('https://minmoji.ucda.jp/fontseot/https%3A__e331.f5.si');
+    src: local('minmoji'),
+        url('https://minmoji.ucda.jp/fontswoff/https%3A__e331.f5.si') format('woff'),
+        url('https://minmoji.ucda.jp/fonts/https%3A__e331.f5.si') format('opentype');
+}
+body {
+    font-family: minmoji;
+    margin: 0px;
+    line-height:25px;
+}
+canvas {
+    border: 1px solid silver;
+}
+#canvas_sample {
+    width: 100%;
+}
+#next{
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+    background-color: mediumblue;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 4px;
+    padding: 5px;
+}
+#back{
+    position: fixed;
+    left: 5px;
+    bottom: 2px;
+    color: mediumblue;
+    padding: 5px;
+}
