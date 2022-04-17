@@ -1,35 +1,54 @@
-'use strict';
-
-// キャッシュファイルの指定
+//キャッシュの設定
 var CACHE_NAME = 'syasintensaibousisukasi';
 var urlsToCache = [
     './index.html',
     './script.js',
     './style.css'
 ];
-//installイベントの場合
-//前述のファイルパスをすべてキャッシュに登録する
+
+//インストール
 self.addEventListener('install', function(event) {
-    event.waitUntil(
-      caches.open(CACHE_NAME).then(function(cache) {
-        return cache.addAll(urlsToCache);
-      })
-     );
-  });
-  //fetchイベントの場合
-  //ウェブサイトへのアクセスが成功すれば取得できた内容をキャッシュに保存した上でアプリで表示する。
-  //ウェブサイトへのアクセスが失敗すれば保存されているキャッシュをアプリで表示する。
-  self.addEventListener('fetch', function(event) {
-     event.respondWith(async function() {
-        try{
-          var res = await fetch(event.request);
-          var cache = await caches.open(CACHE_NAME);
-          cache.put(event.request.url, res.clone());
-          return res;
+  event.waitUntil(caches.open(CACHE_NAME).then(function(cache){
+    console.log('Opened cache');
+    return cache.addAll(urlsToCache);
+  }));
+});
+
+//古いキャッシュの削除
+self.addEventListener('activate', function(event) {
+  var cacheWhitelist = [CACHE_NAME, ];
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(cacheNames.map(function(cacheName) {
+        console.log('delete old cache');
+        if (cacheWhitelist.indexOf(cacheName) === -1){
+          return caches.delete(cacheName);
         }
-        catch(error){
-          console.log('Using cache');
-          return caches.match(event.request);
-         }
-       }());
-   });
+      }));
+    })
+  );
+});
+
+//キャッシュの利用
+self.addEventListener('fetch', function(event) {
+  console.log('fetch');
+  event.respondWith(caches.match(event.request).then(function(response){
+    // Cache hit - return response
+    if(response){
+      return response;
+    }
+    var fetchRequest = event.request.clone();
+    return fetch(fetchRequest).then(function(response){
+      // Check if we received a valid response
+      if(!response || response.status !== 200 || response.type !== 'basic') {
+        return response;
+      }
+      var responseToCache = response.clone();
+      caches.open(CACHE_NAME).then(function(cache) {
+        cache.put(event.request, responseToCache);
+      });
+      return response;
+    });
+  }));
+});
+
