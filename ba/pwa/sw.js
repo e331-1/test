@@ -3,10 +3,7 @@
 // キャッシュファイルの指定
 var CACHE_NAME = 'test';
 var urlsToCache = [
-    '../',
-    '../script.js',
-    '../functions.js',
-    '../style.css'
+    '../'
 ];
 //installイベントの場合
 //前述のファイルパスをすべてキャッシュに登録する
