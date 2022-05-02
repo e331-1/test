@@ -4,9 +4,9 @@
     "display": "standalone",
     "scope": "./",
     "start_url": "./",
-    "name": "PWA\u30ad\u30c3\u30c8",
-    "short_name": "PWA",
-    "description": "PWA\u3092\u4f5c\u308b\u305f\u3081\u306e\u3084\u3064",
+    "name": "体温シャッフル",
+    "short_name": "体温",
+    "description": "健康観察表の体温を捏造するためのやつ",
     "icons": [
 {
 			"src": "icon/android-chrome-36x36.png",
