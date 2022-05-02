@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="./pwa/manifest.webmanifest">
+  <title>体温シャッフル</title>
+</head>
+<body>
+  <h1 id="taion"></h1>
+  <input type="button" onclick="taion()" value="体温を表示">
+</body>
+<script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then((reg) => { console.log('SW registered.', reg); });
+    }
+    function taion(){
+      document.getElementById("taion").innerText=36+(Math.floor( Math.random() * 11 ))/10;
+    }
+  </script>
+  
