@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+html,body{
+    overflow: hidden;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.selectAreaCategory{
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.selectAreaCategoryButton{
+    width: calc(100% / 4);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    flex-flow: column;
+    padding: 4px 8px;
+}
+.selectAreaCategoryButtonIcon{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.selectAreaCategoryButtonText{
+    font-size: 12px;
+}
+
+
+
+
+.selectAreaLists{
+    width: 300%;
+    height: calc( 100vh - 70px);
+    position: absolute;
+    display: flex;
+    align-items:flex-start;
+    left: 0;
+    top: 0;
+    height: calc(100% - 50px);
+}
+.selectAreaList{
+    width: calc( ( 100% / 3 ) - 3px);
+    padding: 4px 8px;
+    display: inline-block;
+    overflow: auto;
+    height: 100%;
+}
+.selectAreaListButton{
+    display: flex;
+    align-items: center;
+
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+.selectAreaListButtonIcon{
+    margin-right: 4px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
