@@ -14,6 +14,20 @@
                 <div class="selectAreaList">
                     <div class="selectAreaListButton">
                         <img src="./icon/user.svg" class="selectAreaListButtonIcon">
+                        <span class="selectAreaListButtonText">アプリ</span>
+                    </div>
+                    <div class="selectAreaListButton selected">
+                        <img src="./icon/user.svg" class="selectAreaListButtonIcon">
+                        <span class="selectAreaListButtonText">アプリ2</span>
+                    </div>
+                    <div class="selectAreaListButton">
+                        <img src="./icon/user.svg" class="selectAreaListButtonIcon">
+                        <span class="selectAreaListButtonText">アプリ3</span>
+                    </div>
+                </div>
+                <div class="selectAreaList">
+                    <div class="selectAreaListButton">
+                        <img src="./icon/user.svg" class="selectAreaListButtonIcon">
                         <span class="selectAreaListButtonText">ユーザー1</span>
                     </div>
                     <div class="selectAreaListButton selected">
@@ -115,22 +129,27 @@
                 </div>
             </div>
             <div class="selectAreaCategory">
-                <div class="selectAreaCategoryButton">
+                <div class="selectAreaCategoryButton" onclick="selectAreaListsSwipe.to(0)">
                     <img src="./icon/user.svg" class="selectAreaCategoryButtonIcon">
                     <span class="selectAreaCategoryButtonText">209</span>
                 </div>
-                <div class="selectAreaCategoryButton selected">
+                <div class="selectAreaCategoryButton" onclick="selectAreaListsSwipe.to(1)">
                     <img src="./icon/user.svg" class="selectAreaCategoryButtonIcon">
                     <span class="selectAreaCategoryButtonText">フレンド</span>
                 </div>
-                <div class="selectAreaCategoryButton">
+                <div class="selectAreaCategoryButton" onclick="selectAreaListsSwipe.to(2)">
                     <img src="./icon/user.svg" class="selectAreaCategoryButtonIcon">
                     <span class="selectAreaCategoryButtonText">グループ</span>
                 </div>
-                <div class="selectAreaCategoryButton">
+                <div class="selectAreaCategoryButton" onclick="selectAreaListsSwipe.to(3)">
                     <img src="./icon/user.svg" class="selectAreaCategoryButtonIcon">
                     <span class="selectAreaCategoryButtonText">アプリ/BOT</span>
                 </div>
+            </div>
+        </div>
+        <div class="mainArea">
+            <div class="mainAreaContent">
+                <div class="mainAreaChannelList">aa</div>
             </div>
         </div>
     </body>

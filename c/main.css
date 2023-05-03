@@ -3,6 +3,9 @@ html,body{
     overflow: hidden;
     font-family: 'Noto Sans JP', sans-serif;
 }
+:root {
+    --selectAreaList-number: 4;
+}
 .selectAreaCategory{
     position: absolute;
     bottom: 0;
@@ -14,7 +17,7 @@ html,body{
     align-items: center;
 }
 .selectAreaCategoryButton{
-    width: calc(100% / 4);
+    width: calc(100% / var(--selectAreaList-number));
     height: 100%;
     display: flex;
     align-items: center;
@@ -29,14 +32,14 @@ html,body{
     border-radius: 50%;
 }
 .selectAreaCategoryButtonText{
-    font-size: 12px;
+    font-size: 10px;
 }
 
 
 
 
 .selectAreaLists{
-    width: 300%;
+    width: calc(100% * var(--selectAreaList-number));
     height: calc( 100vh - 70px);
     position: absolute;
     display: flex;
@@ -64,4 +67,48 @@ html,body{
     width: 40px;
     height: 40px;
     border-radius: 50%;
+}
+
+.mainArea{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+.mainAreaContent{
+    position: absolute;
+    left: 72px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+.mainAreaChannelList{
+    width: calc(100% - 72px);
+    height: 100%;
+}
+@media only screen and (min-width: 750px) {
+    .selectAreaCategory{
+        width: 300px;
+    }
+    .selectAreaLists{
+        width: calc(300px * var(--selectAreaList-number));;
+    }
+    .mainArea{
+        left: 300px;
+    }
+    .mainAreaContent{
+        left: 0px;
+    }
+    .mainAreaChannelList{
+        width: 200px;
+    }
+}
+
+/*後で消す*/
+@media only screen and (max-width: 750px) {
+    .mainArea{
+        display: none;
+    }
 }
