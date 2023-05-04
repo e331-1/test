@@ -1,0 +1,21 @@
+.selectAreaCategory{
+    box-shadow: 0px 0px 8px;
+}
+.selectAreaCategoryButton{
+    border-top: 3px solid white;
+}
+.selectAreaCategoryButton.selected{
+    border-top: 3px solid black;
+}
+
+.selectAreaListButton.selected{
+    background-color: silver;
+}
+
+.mainAreaContent{
+    background-color: white;
+    box-shadow: 0px 0px 8px;
+}
+.mainAreaChannelList{
+    background-color: gray;
+}
