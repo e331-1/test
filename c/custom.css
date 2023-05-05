@@ -1,0 +1,22 @@
+.selectAreaCategory{
+    box-shadow: 0px 0px 8px;
+}
+.selectAreaCategoryButton{
+    border-bottom: 3px solid white;
+}
+.selectAreaCategoryButton.selected{
+    border-bottom: 3px solid black;
+}
+
+.selectAreaListButton.selected{
+    background-color: silver;
+    z-index: 54;
+    position: relative;
+}
+
+.mainAreaContent,.mainAreaUnderlay{
+    background-color: white;
+}
+.mainAreaChannelList{
+    background-color: silver;
+}
