@@ -54,7 +54,7 @@ class swipe{
             }
         })
         this.swipeableElement.addEventListener("touchmove", () => {
-                if(((Math.abs(touchStart.x-event.changedTouches[0].screenX)>10)&&(Math.abs(touchStart.y-event.changedTouches[0].screenY)<50))&&touchStart.i<5){
+                if(((Math.abs(touchStart.x-event.changedTouches[0].screenX)>10)&&(Math.abs(touchStart.y-event.changedTouches[0].screenY)<20))&&touchStart.i<5){
                     //スワイプ判定オン
                     touchStart.swiping=true
                 }else{
