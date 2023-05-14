@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="urf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link href="./destyle.css" rel="stylesheet">
+        <link href="./main.css" rel="stylesheet">
+        <link href="./custom.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+        <script src="./swipe.js"></script>
+        <script src="./function.js"></script>
+        <script src="./script.js"></script>
+    </head>
+    <body>
+        <div class="selectAreaBlur" style="backdrop-filter: blur(0px);"></div>
+        <div class="selectArea">
+            <div class="selectAreaLists">
+                <div class="selectAreaList">
+                    <div class="myAccount" onclick="alert('aa')">
+                        <img class="myUserIcon myAccountIcon">
+                        <span class="myAccountName">209</span>
+                    </div>
+                    <div class="selectAreaListButton" onclick="alert('aa')">
+                        <img src="./icon/user.svg" class="selectAreaListButtonIcon">
+                        <span class="selectAreaListButtonText">オンライン</span>
+                    </div>
+                    <div class="selectAreaListButton">
+                        <img src="./icon/user.svg" class="selectAreaListButtonIcon">
+                        <span class="selectAreaListButtonText">プロフィール</span>
+                    </div>
+                    <div class="selectAreaListButton">
+                        <img src="./icon/user.svg" class="selectAreaListButtonIcon">
+                        <span class="selectAreaListButtonText">アカウント切替</span>
+                    </div>
+                    <div class="selectAreaListButton">
+                        <img src="./icon/user.svg" class="selectAreaListButtonIcon">
+                        <span class="selectAreaListButtonText">設定</span>
+                    </div>
+                </div>
+                <div class="selectAreaList">
+                    <div class="selectAreaListGroup">
+                        <img src="./icon/groupAdd.svg" class="selectAreaListGroupIcon">
+                        <span class="selectAreaListGroupText">フレンド申請/追加<span class="newNumber">1</span></span>
+                    </div>
+                    <div class="selectAreaListGroup">
+                        <span class="selectAreaListGroupText">オンライン (3)</span>
+                    </div>
+                    <div class="selectAreaListGroup">
+                        <img src="./icon/groupFolder.svg" class="selectAreaListGroupIcon">
+                        <span class="selectAreaListGroupText">学校友達 (10)</span>
+                    </div>
+                    <div class="selectAreaListGroup">
+                        <img src="./icon/groupFolder.svg" class="selectAreaListGroupIcon">
+                        <span class="selectAreaListGroupText">千住民 (10)</span>
+                    </div>
+                    <div class="userButton">
+                        <img class="userButtonIconDefault">
+                        <div class="userButtonDetail">
+                            <span class="userButtonDetailName">ユーザー1</span>
+                            <span class="userButtonDetailStatus">
+                                <span class="userButtonDetailStatusIcon online"></span>
+                                <span class="userButtonDetailStatusText">オンライン</span>
+                            </span>
+                        </div>
+                        <span class="newNumber">1</span>
+                    </div>
+                    <div class="userButton">
+                        <img src="./icon/user.svg" class="userButtonIcon">
+                        <div class="userButtonDetail">
+                            <span class="userButtonDetailName">ユーザー1</span>
+                            <span class="userButtonDetailStatus">
+                                <span class="userButtonDetailStatusIcon idle"></span>
+                                <span class="userButtonDetailStatusText">退席中</span>
+                            </span>
+                        </div>
+                        <span class="newNumber"></span>
+                    </div>
+                    <div class="userButton">
+                        <img src="./icon/user.svg" class="userButtonIcon">
+                        <div class="userButtonDetail">
+                            <span class="userButtonDetailName">ユーザー1</span>
+                            <span class="userButtonDetailStatus">
+                                <span class="userButtonDetailStatusIcon doNotDisturb"></span>
+                                <span class="userButtonDetailStatusText">取り込み中</span>
+                            </span>
+                        </div>
+                        <span class="newNumber"></span>
+                    </div>
+                    <div class="userButton">
+                        <img src="./icon/user.svg" class="userButtonIcon">
+                        <div class="userButtonDetail">
+                            <span class="userButtonDetailName">ユーザー1</span>
+                            <span class="userButtonDetailStatus">
+                                <span class="userButtonDetailStatusIcon offline"></span>
+                                <span class="userButtonDetailStatusText">オフライン</span>
+                            </span>
+                        </div>
+                        <span class="newNumber"></span>
+                    </div>
+                    <div class="userButton">
+                        <img src="./icon/user.svg" class="userButtonIcon">
+                        <div class="userButtonDetail">
+                            <span class="userButtonDetailName">ユーザー1</span>
+                            <span class="userButtonDetailStatus">
+                                <span class="userButtonDetailStatusIcon custom">🍔</span>
+                                <span class="userButtonDetailStatusText">飯</span>
+                            </span>
+                        </div>
+                        <span class="newNumber"></span>
+                    </div>
+                    <div class="selectAreaListGroup">
+                        <span class="selectAreaListGroupText">ブロック済み (5)</span>
+                    </div>
+                </div>
+                <div class="selectAreaList">
+                    <div class="selectAreaListGroup">
+                        <img src="./icon/groupAdd.svg" class="selectAreaListGroupIcon">
+                        <span class="selectAreaListGroupText">グループ招待/作成<span class="newNumber"></span></span>
+                    </div>
+                    <div class="selectAreaListGroup">
+                        <img src="./icon/groupFolder.svg" class="selectAreaListGroupIcon">
+                        <span class="selectAreaListGroupText">学校関係 (2)</span>
+                    </div>
+                    <div class="selectAreaListGroup">
+                        <img src="./icon/groupFolder.svg" class="selectAreaListGroupIcon">
+                        <span class="selectAreaListGroupText">千住民 (5)</span>
+                    </div>
+                    <div class="selectAreaListButton" onclick="showChannel()">
+                        <img src="./icon/user.svg" class="selectAreaListButtonIcon">
+                        <span class="selectAreaListButtonText">グループ1</span>
+                        <span class="newNumber"></span>
+                    </div>
+                    <div class="selectAreaListButton" onclick="showChannel()">
+                        <img src="./icon/user.svg" class="selectAreaListButtonIcon">
+                        <span class="selectAreaListButtonText">グループ2</span>
+                        <span class="newNumber"></span>
+                    </div>
+                    <div class="selectAreaListButton" onclick="showChannel()">
+                        <img src="./icon/user.svg" class="selectAreaListButtonIcon">
+                        <span class="selectAreaListButtonText">グループ3</span>
+                        <span class="newNumber"></span>
+                    </div>
+                </div>
+                <div class="selectAreaList">
+                    <div class="selectAreaListButton">
+                        <img src="./icon/user.svg" class="selectAreaListButtonIcon">
+                        <span class="selectAreaListButtonText">アプリ</span>
+                    </div>
+                    <div class="selectAreaListButton">
+                        <img src="./icon/user.svg" class="selectAreaListButtonIcon">
+                        <span class="selectAreaListButtonText">アプリ2</span>
+                    </div>
+                    <div class="selectAreaListButton">
+                        <img src="./icon/user.svg" class="selectAreaListButtonIcon">
+                        <span class="selectAreaListButtonText">アプリ3</span>
+                    </div>
+                </div>
+            </div>
+            <div class="selectAreaCategory">
+                <div class="selectAreaCategoryButton" onclick="selectAreaListsSwipe.to(0)">
+                    <img class="selectAreaCategoryButtonIcon myUserIcon">
+                    <span class="selectAreaCategoryButtonText">209</span>
+                </div>
+                <div class="selectAreaCategoryButton" onclick="selectAreaListsSwipe.to(1)">
+                    <img src="./icon/categoryUser.svg" class="selectAreaCategoryButtonIcon">
+                    <span class="selectAreaCategoryButtonText">フレンド<span class="newNumber">2</span></span>
+                </div>
+                <div class="selectAreaCategoryButton" onclick="selectAreaListsSwipe.to(2)">
+                    <img src="./icon/categoryGroup.svg" class="selectAreaCategoryButtonIcon">
+                    <span class="selectAreaCategoryButtonText">グループ<span class="newNumber"></span></span>
+                </div>
+                <div class="selectAreaCategoryButton" onclick="selectAreaListsSwipe.to(3)">
+                    <img src="./icon/user.svg" class="selectAreaCategoryButtonIcon">
+                    <span class="selectAreaCategoryButtonText">アプリ/BOT</span>
+                </div>
+            </div>
+        </div>
+        <div class="mainAreaUnderlay" style="display: none;"></div>
+        <div class="mainArea">
+            <div class="mainAreaContent" style="pointer-events: none;background-color: rgba(0,0,0,0);">
+            </div>
+            <div class="mainAreaContent" style="background-color: rgba(0,0,0,0);">
+                <div class="mainAreaSpace" onclick="mainAreaSwipe.to(0)"></div>
+                <div class="mainAreaChannelList">
+                    <div class="mainAreaChannelListButton" style="width:100%">
+                        <img src="./icon/user.svg" class="mainAreaChannelListButtonIcon">
+                        <span class="mainAreaChannelListButtonText">テキストチャンネル</span>
+                    </div>
+                    <div class="mainAreaChannelListButton">
+                        <img src="./icon/user.svg" class="mainAreaChannelListButtonIcon">
+                        <span class="mainAreaChannelListButtonText">ボイスチャンネル</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mainAreaContent">
+                チャット
+            </div>
+            <div class="mainAreaContent">
+                サブ
+            </div>
+        </div>
+    </body>
+</html>

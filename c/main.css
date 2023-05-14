@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+html,body{
+    overflow: hidden;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+}
+:root {
+    --selectAreaList-number: 4;
+    --selectArea-width:300px;
+}
+* {
+    /*chrome系ブラウザのスワイプで戻るのを禁止*/
+    overscroll-behavior-x: none !important; 
+
+}
+
+
+
+
+
+
+.selectArea{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.selectAreaBlur{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+.selectAreaCategory{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.selectAreaCategoryButton{
+    width: calc(100% / var(--selectAreaList-number));
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    flex-flow: column;
+    padding: 4px 8px;
+    cursor:pointer;
+}
+.selectAreaCategoryButtonIcon{
+    width: 30px;
+    height: 30px;
+}
+.selectAreaCategoryButtonText{
+    font-size: 10px;
+    white-space: nowrap;
+}
+.selectAreaLists{
+    width: calc(100% * var(--selectAreaList-number));
+    position: absolute;
+    display: flex;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    padding-top: 50px;
+    height: 100%;
+}
+.selectAreaList{
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: auto;
+    width: calc( ( 100% / 3 ) - 3px);
+    padding: 4px 8px;
+    height: 100%;
+    overflow-y: auto;
+}
+.selectAreaListButton.selected{
+    z-index: 2;
+    position: relative;
+}
+.selectAreaListButton{
+    display: flex;
+    align-items: center;
+
+    padding: 4px 8px;
+    border-radius: 8px;
+    cursor:pointer;
+}
+.selectAreaListButton>*{
+    user-select: none;
+}
+.selectAreaListButtonIcon{
+    margin-right: 4px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.selectAreaListGroup{
+    display: flex;
+    align-items: center;
+
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor:pointer;
+}
+.selectAreaListGroupText{
+    font-size: 17px;
+    display: inline-flex;
+    align-items: center;
+}
+.selectAreaListGroup::after {
+    content: url(./icon/group.svg);
+    position: relative;
+    left: 10px;
+    height: 20px;
+    width: 15px;
+}
+.selectAreaListGroupIcon{
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+}
+.newNumber:empty{
+    display: none;
+}
+.newNumber{
+    color: white;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    margin-left: 4px;
+}
+
+
+.myAccount{
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 8px;
+    cursor:pointer;
+}
+.myAccountIcon{
+    margin-right: 4px;
+    width: 60px;
+    height: 60px;
+}
+.myAccountName{
+    font-size: 17px;
+}
+
+.userButtonIcon{
+    margin-right: 4px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.myUserIcon{
+    content: url(https://cdn.discordapp.com/avatars/821350806321233970/bb59b179bbb23363f6819453ae70b0cd.webp?size=256);
+    border-radius: 50%;
+}
+.myUserName{
+    content: "209";
+}
+.userButton{
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 8px;
+    cursor:pointer;
+}
+.userButtonIcon{
+    margin-right: 4px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.userButtonIconDefault{
+    margin-right: 4px;
+    background-size:cover;
+    border: none;
+    width: 40px;
+    height: 40px;
+
+    content: url(./icon/defaultUser.svg);
+}
+.userButtonDetailName{
+    display: block;
+}
+.userButtonDetailStatus{
+    display: block;
+}
+.userButtonDetailStatusIcon{
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+}
+.custom{
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+}
+.userButtonDetailStatusText{
+    font-size: 10px;
+}
+
+
+.mainArea{
+    position: absolute;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 400%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 3;
+    overflow: visible;
+}
+.mainAreaUnderlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+.mainAreaContent{
+    display: flex;
+    flex-flow: row;
+ 
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    pointer-events: auto;
+}
+.mainAreaSpace{
+    height: 100%;
+    width: 72px;
+}
+.mainAreaChannelList{
+    width: calc(100% - 72px);
+    height: 100%;
+    box-shadow: 0px 0px 8px;
+    position: relative;
+}
+.mainAreaChannelListButton{
+    display: flex;
+    align-items: center;
+
+    padding: 4px 8px;
+    border-radius: 8px;
+    cursor:pointer;
+}
+.mainAreaChannelListButtonIcon{
+    margin-right: 4px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+@media only screen and (min-width: 750px) {
+    .selectArea{
+        width: var(--selectArea-width);
+    }
+    .selectAreaLists{
+        width: calc(var(--selectArea-width) * var(--selectAreaList-number));
+    }
+
+    .selectAreaBlur{
+        backdrop-filter: blur(10px);
+    }
+    .mainAreaSpace{
+        pointer-events: none;
+    }
+    .mainAreaContent{
+        width: min-content;
+    }
+    .mainAreaContent:nth-of-type(2) {
+        pointer-events: none;
+    }
+    .mainAreaChannelList{
+        pointer-events: auto;
+        width: calc(var(--selectArea-width) - 72px)
+    }
+}
+
+/*後で消す*/
+@media only screen and (max-width: 750px) {
+}

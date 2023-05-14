@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="40"
+   height="40"
+   viewBox="0 0 10.583333 10.583333"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="defaultUser.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     width="10mm"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:object-paths="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-center="true"
+     inkscape:snap-page="true"
+     inkscape:zoom="16.916715"
+     inkscape:cx="20.187134"
+     inkscape:cy="19.152654"
+     inkscape:window-width="2160"
+     inkscape:window-height="1334"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     units="px" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.195375;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke fill markers"
+       id="path1164"
+       sodipodi:type="arc"
+       sodipodi:cx="-5.2916665"
+       sodipodi:cy="-10.485056"
+       sodipodi:rx="5.1933885"
+       sodipodi:ry="4.0595093"
+       sodipodi:start="0"
+       sodipodi:end="3.1415927"
+       sodipodi:arc-type="arc"
+       d="m -0.09827805,-10.485056 a 5.1933885,4.0595093 0 0 1 -2.59669425,3.5156383 5.1933885,4.0595093 0 0 1 -5.1933886,-1e-7 5.1933885,4.0595093 0 0 1 -2.5966941,-3.5156382"
+       sodipodi:open="true"
+       transform="scale(-1)" />
+    <ellipse
+       style="fill:none;stroke:#000000;stroke-width:0.264583;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke fill markers"
+       id="path1352"
+       cx="5.2916665"
+       cy="3.2077014"
+       rx="2.243613"
+       ry="2.2444103" />
+  </g>
+</svg>

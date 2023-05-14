@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+html,body{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+    color: black;
+}
+.selectAreaCategory{
+    box-shadow: 0px 0px 8px;
+}
+.selectAreaCategoryButton{
+    border-bottom: 3px solid white;
+}
+.selectAreaCategoryButton.selected{
+    border-bottom: 3px solid black;
+}
+
+.selectAreaListButton.selected{
+    background-color: silver;
+}
+
+.mainAreaContent,.mainAreaUnderlay{
+    background-color: white;
+}
+.mainAreaChannelList{
+    background-color: silver;
+    pointer-events: auto;
+}
+
+.newNumber{
+    background-color: red;
+}
+
+.online{
+    background-color: #00b300;
+}
+.idle{
+    background-color: #b3b300;
+}
+.doNotDisturb{
+    background-color: #b30000;
+}
+.offline{
+    background-color: #b3b3b3;
+}
+
