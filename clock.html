@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+        body{
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        * {
+            font-family: "Noto Sans JP", system-ui;
+            font-optical-sizing: auto;
+            font-style: normal;
+            color: white;
+            margin: 0;
+        }
+        main{
+            
+        }
+        
+        #date{
+            font-size: 15vh;
+            margin-bottom: 15vh;
+        }
+        #time{
+            font-size: 50vh;
+        }
+        small{
+            font-size: 30vh;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div id="time"></div>
+        <div id="date"></div>
+    </main>
+</body>
+<script>
+    function numberToDay(number) {
+        switch (number) {
+            case 0:
+                return "日"
+            case 1:
+                return "月"
+            case 2:
+                return "火"
+            case 3:
+                return "水"
+            case 4:
+                return "木"
+            case 5:
+                return "金"
+            case 6:
+                return "土"
+            default:
+                break;
+        }
+        
+    }
+    setInterval(() => {
+        const time = new Date()
+        document.getElementById("time").innerHTML = `
+    ${time.getHours().toString().padStart(2, '0')} : ${time.getMinutes().toString().padStart(2, '0')} <small> ${time.getSeconds().toString().padStart(2, '0')}</small>
+    `
+        document.getElementById("date").innerHTML = `
+        ${time.getFullYear().toString().padStart(2, '0')} / ${(time.getMonth()+1).toString().padStart(2, '0')} / ${time.getDate().toString().padStart(2, '0')} (${numberToDay(time.getDay())})
+        `
+        
+    }, 10);
+
+</script>
+
+</html>
